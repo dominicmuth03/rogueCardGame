@@ -1,5 +1,5 @@
 package Die;
-
+import java.util.Random;
 public class D20 extends Dice {
     @Override
     public void preroll() {
@@ -9,7 +9,8 @@ public class D20 extends Dice {
 
     @Override
     public int roll() {
-        // TODO Auto-generated method stub
-        return 0;
+        preroll();
+        Random rand = new Random();
+        return rand.nextInt(21);
     }
 }

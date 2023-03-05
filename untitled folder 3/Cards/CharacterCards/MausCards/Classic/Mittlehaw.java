@@ -11,8 +11,10 @@ public class Mittlehaw extends Card {
         this.DOR = true;
     };
     public void cardEffects() {
-        int target = this.requestTarget();
-        int damage = 2 + Player.player.d4.roll() + Player.player.d4.roll();
-        Enemies.enemies[target].takeDamage(damage);
+        int damage;
+        for (Monster target : Enemies.enemies) {
+            damage = Player.player.d6.roll();
+            target.takeDamage(damage);
+        }
     };
 }

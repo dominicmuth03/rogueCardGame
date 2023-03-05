@@ -1,18 +1,18 @@
-package Cards.CharacterCards.MausCards.Classic;
+package Cards.CharacterCards.MausCards.Draftable
 import Cards.Card;
 import Characters.*;
 import Enemies.*;
-public class Underhaw extends Card {
-    Underhaw() {
-        this.name = "Underhaw";
-        this.description = "Deals 2d4 + 2 damage to a single Enemy";
+public class Oberhaw extends Card {
+    Oberhaw() {
+        this.name = "Oberhaw";
+        this.description = "Deals 2d6 + 3 damage to a single Enemy";
         this.attribute = "Blade";
         this.AP = 1;
         this.DOR = true;
     };
     public void cardEffects() {
         int target = this.requestTarget();
-        int damage = 2 + Player.player.d4.rollnTimes(2);
+        int damage = 3 + Player.player.d6.rollnTimes(2);
         Enemies.enemies[target].takeDamage(damage);
     };
 }
