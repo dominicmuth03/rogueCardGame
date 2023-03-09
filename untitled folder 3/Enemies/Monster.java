@@ -3,6 +3,7 @@ package Enemies;
 abstract public class Monster {
     int hp;
     int maxHp;
+    String name;
     public void takeDamage(int damage) {
         hp -= damage;
     };
@@ -16,4 +17,5 @@ abstract public class Monster {
             assert(this.hp == this.maxHp);
         }
     }
+    abstract public void takeTurn();
 }
