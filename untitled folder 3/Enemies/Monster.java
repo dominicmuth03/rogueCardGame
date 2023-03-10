@@ -1,11 +1,11 @@
 package Enemies;
 
 abstract public class Monster {
-    int hp;
-    int maxHp;
-    String name;
+    public int hp;
+    public int maxHp;
+    public String name;
     public void takeDamage(int damage) {
-        hp -= damage;
+        this.hp -= damage;
     };
     public void healUp(int health) {
         int gap = this.maxHp - this.hp;

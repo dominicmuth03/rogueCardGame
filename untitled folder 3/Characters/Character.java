@@ -29,10 +29,29 @@ abstract public class Character {
     public void gearUp(int armour) {
         this.armour += armour;
     }
+    //dice
     public D4 d4;
     public D6 d6;
     public D8 d8;
     public D10 d10;
     public D12 d12;
     public D20 d20;
+    //statuses
+    public int freeze;
+    public int burn;
+    public int poison;
+    public void handleStatus() {
+        if (this.freeze > 0) {
+            this.AP -= this.freeze;
+            this.freeze--;
+        }
+        if (this.burn > 0) {
+            this.beStruckBy(this.burn);
+            this.burn--;
+        }
+        if (this.poison > 0) {
+            this.beStruckBy(this.poison);
+            this.poison--;
+        }
+    }
 }
