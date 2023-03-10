@@ -1,4 +1,4 @@
-package Cards.CharacterCards.MausCards.Draftable
+package Cards.CharacterCards.MausCards.Draftable;
 import Cards.Card;
 import Characters.*;
 import Enemies.*;
