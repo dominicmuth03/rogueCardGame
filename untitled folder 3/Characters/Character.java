@@ -15,6 +15,7 @@ abstract public class Character {
         } else {
             this.armour -= damage;
         }
+        System.out.println("You took " + damage + " damage!");
     }
     public void healUp(int health) {
         int gap = this.maxHp - this.hp;
@@ -25,6 +26,7 @@ abstract public class Character {
         } else {
             assert(this.hp == this.maxHp);
         }
+        System.out.println("You took healed for" + health + " hp!");
     }
     public void gearUp(int armour) {
         this.armour += armour;
@@ -42,14 +44,17 @@ abstract public class Character {
     public int poison;
     public void handleStatus() {
         if (this.freeze > 0) {
+            System.out.println("You are frozen!");
             this.AP -= this.freeze;
             this.freeze--;
         }
         if (this.burn > 0) {
+            System.out.println("You are burning!");
             this.beStruckBy(this.burn);
             this.burn--;
         }
         if (this.poison > 0) {
+            System.out.println("You are poisoned!");
             this.beStruckBy(this.poison);
             this.poison--;
         }
