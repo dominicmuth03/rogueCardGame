@@ -11,23 +11,28 @@ public class Batty extends Monster {
     }
     @Override
     public void takeTurn() {
-        int turn = Room.turncount % 4;
+        int turn = DiceSet.d4();
+        System.out.println("Batty w/a Bat used Batter up!");
         switch (turn) {
-            case 1:
-                Player.player.beStruckBy(DiceSet.d4(2));
-                //print flavour text
-                break;
             case 2:
-                Player.player.beStruckBy(DiceSet.d4(3));
+                System.out.println("Second Plate!");
+                Player.player.beStruckBy(DiceSet.d4(turn));
                 //print flavour text
                 break;
             case 3:
-                Player.player.beStruckBy(DiceSet.d4(4) + 2);
+                System.out.println("Third Plate!");
+                Player.player.beStruckBy(DiceSet.d4(turn));
+                //print flavour text
+                break;
+            case 4:
+                System.out.println("Home Run!");
+                Player.player.beStruckBy(DiceSet.d4(turn) + 2);
                 //print flavour text
                 break;
         
             default:
-                Player.player.beStruckBy(DiceSet.d4(1));
+                System.out.println("First Plate!");
+                Player.player.beStruckBy(DiceSet.d4(turn));
                 //print flavour text
                 break;
         }

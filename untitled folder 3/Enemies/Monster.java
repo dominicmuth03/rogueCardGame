@@ -11,8 +11,10 @@ abstract public class Monster {
         int gap = this.maxHp - this.hp;
         if (gap >= health) {
             this.hp += health;
+            System.out.println("The " + this.name + " regains " + health + " hp");
         } else if (gap > 0) {
             this.hp = this.maxHp;
+            System.out.println("The " + this.name + " regains " + gap + " hp");
         } else {
             assert(this.hp == this.maxHp);
         }

@@ -14,6 +14,8 @@ public class Brownies extends Monster {
         int turn = Room.turncount % 2;
         switch (turn) {
             case 1:
+                System.out.println("The Box o' Brownies used Fairy Dust!");
+                System.out.println("Fairy dust scatters everywhere!");
                 for (Monster target : Enemies.enemies) {
                     target.healUp(DiceSet.d4(2));
                 }
@@ -21,6 +23,7 @@ public class Brownies extends Monster {
                 break;
         
             default:
+                System.out.println("The Box o' Brownies used Mischief!");
                 Player.player.beStruckBy(2 + DiceSet.d6());
                 //print flavour text
                 break;
