@@ -4,6 +4,7 @@ import Die.DiceSet;
 import Characters.Player;
 import Game.*;
 
+
 public class MossyGolemling extends Monster {
     MossyGolemling() {
         this.maxHp = this.hp = 35;
@@ -15,12 +16,17 @@ public class MossyGolemling extends Monster {
         switch (turn) {
             case 1:
                 Player.player.beStruckBy(DiceSet.d6() + DiceSet.d8() + 2);
-                //print flavour text
+                System.out.println("The Mossy Golemling curls into a ball and rolls rapidly towards you!");
                 break;
         
             default:
                 //doze off
                 //print flavour text
+                if (DiceSet.d4() > 2) {
+                    System.out.println("The Golemling seems to be dozing off.");
+                } else {
+                    System.out.println("The Golemling is examining a butterfly.");
+                }
                 break;
         }
     }

@@ -15,11 +15,14 @@ public class Kappa extends Monster {
         switch (turn) {
             case 1:
                 Player.player.beStruckBy(DiceSet.d6() + 2);
+                System.out.println("The Kappa used Kahuna Crash!");
                 //print flavour text
                 break;
         
             default:
                 Player.player.freeze += 1;
+                System.out.println("The Kappa used Chilling Touch!");
+                System.out.println("You've gained 1 freeze.");
                 //print flavour text
                 break;
         }
